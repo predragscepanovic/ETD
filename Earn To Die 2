@@ -1,0 +1,384 @@
+#include <iostream>
+using namespace std;
+
+enum ZombieType {
+	NORMAL_ZOMBIE,
+	CREEPER_ZOMBIE,
+	BIG_ZOMBIE,
+	LARGE_ZOMBIE,
+	BALD_ZOMBIE
+};
+enum ObstacleType {
+
+	ALUMINIUM_BOX,
+	EXPLOSIVE_BARREL,
+	WOODEN_BOX,
+	WOODEN_RAMP,
+	BRIDGE,
+	TUNNEL
+}; 
+
+
+class garage {
+
+public:
+	int getCurrency()
+	{
+		return Currency;
+	}
+	void setCurrency(int $Currency) {
+		Currency = $Currency;
+	}
+	int getVehicleLevel()
+	{
+		return VehicleLevel;
+	}
+	void setVehicleLevel(int $VehicleLevel) {
+		$VehicleLevel = $VehicleLevel;
+	}
+	int getEngineLevel()
+	{
+		return EngineLevel;
+	}
+	void setEngineLevel(int $EngineLevel) {
+		$EngineLevel = $EngineLevel;
+	}
+	int getTransmissionLevel()
+	{
+		return TransmissionLevel;
+	}
+	void setTransmissionLevel(int $TransmissionLevel) {
+		$TransmissionLevel = $TransmissionLevel;
+	}
+	int getWheelLevel()
+	{
+		return WheelLevel;
+	}
+	void setWheelLevel(int $WheelLevel) {
+		$WheelLevel = $WheelLevel;
+	}
+	int getGunLevel()
+	{
+		return GunLevel;
+	}
+	void setGunLevel(int $GunLevel) {
+		$GunLevel = $GunLevel;
+	}
+	int getBoostLevel()
+	{
+		return BoostLevel;
+	}
+	void setBoostLevel(int $BoostLevel) {
+		$BoostLevel = $BoostLevel;
+	}
+	int getWeightRedistLevel()
+	{
+		return WeightRedistLevel;
+	}
+	void setWeightRedistLevel(int $WeightRedistLevel) {
+		$WeightRedistLevel = $WeightRedistLevel;
+	}
+	int getArmorLevel()
+	{
+		return ArmorLevel;
+	}
+	void setArmorLevel(int $ArmorLevel) {
+		$ArmorLevel = $ArmorLevel;
+	}
+	int getFuelTankLevel()
+	{
+		return FuelTankLevel;
+	}
+	void setFuelTankLevel(int $FuelTankLevel) {
+		$FuelTankLevel = $FuelTankLevel;
+	}
+	
+	garage() {
+		Currency = 0;
+		VehicleLevel = 1;
+		EngineLevel = 1;
+		TransmissionLevel = 1;
+		WheelLevel = 1;
+		GunLevel = 0;
+		BoostLevel = 0;
+		WeightRedistLevel = 0;
+		ArmorLevel = 0;
+		FuelTankLevel = 1;
+	}
+	garage(unsigned int $Currency, unsigned int $VehicleLevel, unsigned int $EngineLevel, unsigned int $TransmissionLevel, unsigned int $WheelLevel, unsigned int $GunLevel, unsigned int $BoostLevel,
+		unsigned int $WeightRedistLevel, unsigned int $ArmorLevel, unsigned int $FuelTank) {
+
+		Currency = $Currency;
+		VehicleLevel = $VehicleLevel;
+		EngineLevel = $EngineLevel;
+		TransmissionLevel = $TransmissionLevel;
+		WheelLevel = $WheelLevel;
+		GunLevel = $GunLevel;
+		BoostLevel = $BoostLevel;
+		WeightRedistLevel = $WeightRedistLevel;
+		ArmorLevel = $ArmorLevel;
+		FuelTankLevel = $FuelTank;
+
+	}
+	garage(garage* original)
+	{
+		Currency = original->Currency;
+		VehicleLevel = original->VehicleLevel;
+		TransmissionLevel = original->TransmissionLevel;
+		WheelLevel = original->WheelLevel;
+		GunLevel = original->GunLevel;
+		BoostLevel = original->BoostLevel;
+		WeightRedistLevel = original->WeightRedistLevel;
+		ArmorLevel = original->ArmorLevel;
+		FuelTankLevel = original->FuelTankLevel;
+	}
+
+private:
+	unsigned int Currency;
+	unsigned int VehicleLevel;
+	unsigned int EngineLevel;
+	unsigned int TransmissionLevel;
+	unsigned int WheelLevel;
+	unsigned int GunLevel;
+	unsigned int BoostLevel;
+	unsigned int WeightRedistLevel;
+	unsigned int ArmorLevel;
+	unsigned int FuelTankLevel;
+
+};
+};
+
+
+class level {
+public:
+	int getDay()
+	{
+		return Day;
+	}
+	void setDay(int Day) {
+		Day = Day;
+	}
+	int getCheckpoint()
+	{
+		return Checkpoint;
+	}
+	void setCheckpoint(int Checkpoint) {
+		Checkpoint = Checkpoint;
+	}
+	int getFuelAmount()
+	{
+		return FuelAmount;
+	}
+	void setFuelAmount(int FuelAmount) {
+		FuelAmount = FuelAmount;
+	}
+	int getBoostAmount()
+	{
+		return BoostAmount;
+	}
+	void setBoostAmount(int BoostAmount) {
+		BoostAmount = BoostAmount;
+	}
+	int getSpeed()
+	{
+		return Speed;
+	}
+	void setSpeed(int Speed) {
+		Speed = Speed;
+	}
+	int getBullets()
+	{
+		return Bullets;
+	}
+	void setBullets(int Bullets) {
+		Bullets = Bullets;
+	}
+
+	level() {
+		Day = 1;
+		Checkpoint = 0;
+		FuelAmount = 1;
+		BoostAmount = 0;
+		Speed = 0;
+		Bullets = 0;
+	}
+	level(unsigned int $Day, unsigned int $Checkpoint, unsigned int  $FuelAmount, unsigned int $BoostAmount, unsigned int $Speed, unsigned int $Bullets) {
+
+		Day = $Day;
+		Checkpoint = $Checkpoint;
+		FuelAmount = $FuelAmount;
+		BoostAmount = $BoostAmount;
+		Speed = $Speed;
+		Bullets = $Bullets;
+	}
+	level(level* original) {
+		Day = original-> Day;
+		Checkpoint = original-> Checkpoint;
+		FuelAmount = original-> FuelAmount;
+		BoostAmount = original->BoostAmount;
+		Speed = original->Speed;
+		Bullets = original->Bullets;
+
+	}
+
+private:
+	unsigned int Day;
+	unsigned int Checkpoint; // svaki lvl ima 3 checkpointa 1-1, 1-2, 1-3
+	unsigned int FuelAmount;
+	unsigned int BoostAmount;
+	unsigned int Speed;
+	unsigned int Bullets;
+
+};
+class zombie {
+	int getNormalZombie()
+	{
+		return NormalZombie;
+	}
+	void setNormalZombie(int NormalZombie) {
+		NormalZombie = NormalZombie;
+	}
+	int getCreeperZombie()
+	{
+		return CreeperZombie;
+	}
+	void setCreeperZombiey(int CreeperZombie) {
+		CreeperZombie = CreeperZombie;
+	}
+	int getBigZombie()
+	{
+		return BigZombie;
+	}
+	void setBigZombie(int BigZombie) {
+		BigZombie = BigZombie;
+	}
+	int getLargeZombie()
+	{
+		return LargeZombie;
+	}
+	void setLargeZombie(int LargeZombie) {
+		LargeZombie = LargeZombie;
+	}
+	int getBaldZombie()
+	{
+		return BaldZombie;
+	}
+	void setBaldZombie(int BaldZombie) {
+		BaldZombie = BaldZombie;
+	}
+public:
+	zombie(unsigned int $NormalZombie, unsigned int $CreeperZombie, unsigned int $BigZombie, unsigned int $LargeZombie, unsigned int $BaldZombie) {
+		NormalZombie = $NormalZombie;
+		CreeperZombie = $CreeperZombie;
+		BigZombie = $BigZombie;
+		LargeZombie = $LargeZombie;
+		BaldZombie = $BaldZombie;
+
+
+	}
+	zombie(zombie*original) {
+		NormalZombie = original->NormalZombie;
+		CreeperZombie = original->CreeperZombie;
+		BigZombie = original->BigZombie;
+		LargeZombie = original->LargeZombie;
+		BaldZombie = original->BaldZombie;
+	}
+private:
+	unsigned int NormalZombie;
+	unsigned int CreeperZombie;
+	unsigned int BigZombie;
+	unsigned int LargeZombie;
+	unsigned int BaldZombie;
+
+
+};
+class obstacle {
+
+	string getObstacleName()
+	{
+		return ObstacleName;
+	}
+	void setObstacleName(string ObastacleName) {
+		ObstacleName = ObstacleName;
+	}
+	float getObstacleDamage()
+	{
+		return ObstacleDamage;
+	}
+	void setObstacleDamage(float ObstacleDamage) {
+		ObstacleDamage = ObstacleDamage;
+	}
+	float getObstacleResistance()
+	{
+		return ObstacleResistence;
+	}
+	void setObstacleResistance(float ObstacleResistance) {
+		ObstacleResistance = ObstacleResistance;
+	}
+
+
+private:
+	string ObstacleName;
+	ObstacleType type;
+	float ObstacleDamage;
+	float ObstacleResistence;
+};
+	
+class MoneyEarnedCalculator {
+public:
+	int getDistance()
+	{
+		return Distance;
+	}
+	void setDistance(int Distance) {
+		Distance = Distance;
+	}
+	int getZombiesHit()
+	{
+		return ZombiesHit;
+	}
+	void setZombiesHit(int ZombiesHit) {
+		ZombiesHit = ZombiesHit;
+	}
+	float getAverageSpeed()
+	{
+		return AverageSpeed;
+	}
+	void setAverageSpeed(float AverageSpeed) {
+		AverageSpeed = AverageSpeed;
+	}
+
+	MoneyEarnedCalculator() {
+		Distance = 0;
+		ZombiesHit = 0;
+		AverageSpeed = 0;
+
+
+	};
+	MoneyEarnedCalculator(unsigned int $Distance, unsigned int $ZombiesHit, float $AverageSpeed) {
+		Distance = $Distance;
+		ZombiesHit = $ZombiesHit;
+		AverageSpeed = $AverageSpeed;
+
+
+	};
+	MoneyEarnedCalculator(MoneyEarnedCalculator* original) {
+		Distance = original->Distance;
+		ZombiesHit = original->ZombiesHit;
+		AverageSpeed = original->AverageSpeed;
+
+	};
+
+private:
+	unsigned int Distance;
+		unsigned int ZombiesHit;
+		float AverageSpeed;
+	// sum = distance + zombieshit + averagespeed
+
+};
+
+
+int main()
+{
+	return 0;
+}
